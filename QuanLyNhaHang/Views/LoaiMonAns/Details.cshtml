@@ -1,0 +1,42 @@
+﻿@model QuanLyNhaHang.Models.DataModels.LoaiMonAn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LoaiMonAn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLoaiMonAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoaiMonAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhLoaiMonAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhLoaiMonAn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LoaiMonAn1 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

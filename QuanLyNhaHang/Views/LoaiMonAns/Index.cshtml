@@ -1,0 +1,45 @@
+﻿@model IEnumerable<QuanLyNhaHang.Models.DataModels.LoaiMonAn>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoaiMonAn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhLoaiMonAn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoaiMonAn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhLoaiMonAn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LoaiMonAn1 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LoaiMonAn1 }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LoaiMonAn1 })
+        </td>
+    </tr>
+}
+
+</table>

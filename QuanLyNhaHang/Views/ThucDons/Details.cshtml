@@ -1,0 +1,66 @@
+﻿@model QuanLyNhaHang.Models.DataModels.ThucDon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ThucDon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenThucDon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenThucDon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhThucDon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhThucDon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhanTramKM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhanTramKM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongKhach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongKhach)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDThucDon }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

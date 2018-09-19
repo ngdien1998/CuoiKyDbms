@@ -1,0 +1,42 @@
+﻿@model QuanLyNhaHang.Models.DataModels.ChiTietSlideAnh
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietSlideAnh</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SlideAnh.TenSlide)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlideAnh.TenSlide)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlHinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrlHinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDChiTietSlide }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

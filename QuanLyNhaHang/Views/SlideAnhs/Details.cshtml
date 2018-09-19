@@ -1,0 +1,26 @@
+﻿@model QuanLyNhaHang.Models.DataModels.SlideAnh
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SlideAnh</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSlide)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSlide)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDSlideAnh }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

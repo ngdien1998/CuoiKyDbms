@@ -47,6 +47,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.DependencyCollector, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.7.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
     </Reference>
@@ -81,6 +87,8 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -143,10 +151,35 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaiVietsController.cs" />
+    <Compile Include="Controllers\ChiTietSlideAnhsController.cs" />
+    <Compile Include="Controllers\DanhGiaMonAnsController.cs" />
+    <Compile Include="Controllers\DatHangOnlinesController.cs" />
+    <Compile Include="Controllers\HinhMonAnsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiBaiVietsController.cs" />
+    <Compile Include="Controllers\LoaiMonAnsController.cs" />
+    <Compile Include="Controllers\MonAnsController.cs" />
+    <Compile Include="Controllers\NguoiDungsController.cs" />
+    <Compile Include="Controllers\NhanViensController.cs" />
+    <Compile Include="Controllers\SlideAnhsController.cs" />
+    <Compile Include="Controllers\ThucDonsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataModels\BaiViet.cs" />
+    <Compile Include="Models\DataModels\ChiTietSlideAnh.cs" />
+    <Compile Include="Models\DataModels\DanhGiaMonAn.cs" />
+    <Compile Include="Models\DataModels\DatHangOnline.cs" />
+    <Compile Include="Models\DataModels\HinhMonAn.cs" />
+    <Compile Include="Models\DataModels\LoaiBaiViet.cs" />
+    <Compile Include="Models\DataModels\LoaiMonAn.cs" />
+    <Compile Include="Models\DataModels\MonAn.cs" />
+    <Compile Include="Models\DataModels\NguoiDung.cs" />
+    <Compile Include="Models\DataModels\NhaHangContext.cs" />
+    <Compile Include="Models\DataModels\NhanVien.cs" />
+    <Compile Include="Models\DataModels\SlideAnh.cs" />
+    <Compile Include="Models\DataModels\ThucDon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,10 +259,71 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\LoaiMonAns\Create.cshtml" />
+    <Content Include="Views\LoaiMonAns\Delete.cshtml" />
+    <Content Include="Views\LoaiMonAns\Details.cshtml" />
+    <Content Include="Views\LoaiMonAns\Edit.cshtml" />
+    <Content Include="Views\LoaiMonAns\Index.cshtml" />
+    <Content Include="Views\MonAns\Create.cshtml" />
+    <Content Include="Views\MonAns\Delete.cshtml" />
+    <Content Include="Views\MonAns\Details.cshtml" />
+    <Content Include="Views\MonAns\Edit.cshtml" />
+    <Content Include="Views\MonAns\Index.cshtml" />
+    <Content Include="Views\BaiViets\Create.cshtml" />
+    <Content Include="Views\BaiViets\Delete.cshtml" />
+    <Content Include="Views\BaiViets\Details.cshtml" />
+    <Content Include="Views\BaiViets\Edit.cshtml" />
+    <Content Include="Views\BaiViets\Index.cshtml" />
+    <Content Include="Views\ChiTietSlideAnhs\Create.cshtml" />
+    <Content Include="Views\ChiTietSlideAnhs\Delete.cshtml" />
+    <Content Include="Views\ChiTietSlideAnhs\Details.cshtml" />
+    <Content Include="Views\ChiTietSlideAnhs\Edit.cshtml" />
+    <Content Include="Views\ChiTietSlideAnhs\Index.cshtml" />
+    <Content Include="Views\DanhGiaMonAns\Create.cshtml" />
+    <Content Include="Views\DanhGiaMonAns\Delete.cshtml" />
+    <Content Include="Views\DanhGiaMonAns\Details.cshtml" />
+    <Content Include="Views\DanhGiaMonAns\Edit.cshtml" />
+    <Content Include="Views\DanhGiaMonAns\Index.cshtml" />
+    <Content Include="Views\DatHangOnlines\Create.cshtml" />
+    <Content Include="Views\DatHangOnlines\Delete.cshtml" />
+    <Content Include="Views\DatHangOnlines\Details.cshtml" />
+    <Content Include="Views\DatHangOnlines\Edit.cshtml" />
+    <Content Include="Views\DatHangOnlines\Index.cshtml" />
+    <Content Include="Views\HinhMonAns\Create.cshtml" />
+    <Content Include="Views\HinhMonAns\Delete.cshtml" />
+    <Content Include="Views\HinhMonAns\Details.cshtml" />
+    <Content Include="Views\HinhMonAns\Edit.cshtml" />
+    <Content Include="Views\HinhMonAns\Index.cshtml" />
+    <Content Include="Views\LoaiBaiViets\Create.cshtml" />
+    <Content Include="Views\LoaiBaiViets\Delete.cshtml" />
+    <Content Include="Views\LoaiBaiViets\Details.cshtml" />
+    <Content Include="Views\LoaiBaiViets\Edit.cshtml" />
+    <Content Include="Views\LoaiBaiViets\Index.cshtml" />
+    <Content Include="Views\NguoiDungs\Create.cshtml" />
+    <Content Include="Views\NguoiDungs\Delete.cshtml" />
+    <Content Include="Views\NguoiDungs\Details.cshtml" />
+    <Content Include="Views\NguoiDungs\Edit.cshtml" />
+    <Content Include="Views\NguoiDungs\Index.cshtml" />
+    <Content Include="Views\NhanViens\Create.cshtml" />
+    <Content Include="Views\NhanViens\Delete.cshtml" />
+    <Content Include="Views\NhanViens\Details.cshtml" />
+    <Content Include="Views\NhanViens\Edit.cshtml" />
+    <Content Include="Views\NhanViens\Index.cshtml" />
+    <Content Include="Views\SlideAnhs\Create.cshtml" />
+    <Content Include="Views\SlideAnhs\Delete.cshtml" />
+    <Content Include="Views\SlideAnhs\Details.cshtml" />
+    <Content Include="Views\SlideAnhs\Edit.cshtml" />
+    <Content Include="Views\SlideAnhs\Index.cshtml" />
+    <Content Include="Views\ThucDons\Create.cshtml" />
+    <Content Include="Views\ThucDons\Delete.cshtml" />
+    <Content Include="Views\ThucDons\Details.cshtml" />
+    <Content Include="Views\ThucDons\Edit.cshtml" />
+    <Content Include="Views\ThucDons\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Models\BusinessModels\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
